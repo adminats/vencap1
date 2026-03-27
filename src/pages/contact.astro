@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Contact | Venera Capital"
+	description="Get in touch with Venera Capital — for investor enquiries, business opportunities, or general questions."
+>
+
+	<!-- ── Page Hero ─────────────────────────────────────────────── -->
+	<section class="page-hero bg-navy">
+		<div class="container">
+			<span class="section-eyebrow">Get in Touch</span>
+			<h1 style="color:var(--white); font-weight:300; margin-bottom:0;">Contact Us</h1>
+			<hr class="divider" />
+		</div>
+	</section>
+
+	<!-- ── Contact ───────────────────────────────────────────────── -->
+	<section class="section bg-white">
+		<div class="container">
+			<div class="contact-grid">
+
+				<div class="contact-intro">
+					<span class="section-eyebrow">Enquiries</span>
+					<h2>We Welcome Your Enquiry</h2>
+					<hr class="divider" />
+					<p style="color:var(--text-mid);">
+						Whether you are an investor exploring opportunities in Central Asia, a management team seeking a long-term capital partner, or a business with a potential transaction, we invite you to reach out.
+					</p>
+					<div class="contact-channels">
+						<div class="channel">
+							<h5>General Inquiries</h5>
+							<a href="mailto:info@veneracapital.com">info@veneracapital.com</a>
+						</div>
+						<div class="channel">
+							<h5>Investor Relations</h5>
+							<a href="mailto:ir@veneracapital.com">ir@veneracapital.com</a>
+						</div>
+						<div class="channel">
+							<h5>Business Development</h5>
+							<a href="mailto:bd@veneracapital.com">bd@veneracapital.com</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-wrapper">
+					<form class="contact-form" method="post" action="#">
+						<div class="form-row">
+							<div class="field">
+								<label for="firstName">First Name</label>
+								<input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+							</div>
+							<div class="field">
+								<label for="lastName">Last Name</label>
+								<input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+							</div>
+						</div>
+						<div class="field">
+							<label for="email">Email Address</label>
+							<input type="email" id="email" name="email" required autocomplete="email" />
+						</div>
+						<div class="field">
+							<label for="organisation">Organisation</label>
+							<input type="text" id="organisation" name="organisation" autocomplete="organization" />
+						</div>
+						<div class="field">
+							<label for="subject">Subject</label>
+							<select id="subject" name="subject">
+								<option value="">Select a topic…</option>
+								<option value="investor">Investor Inquiry</option>
+								<option value="deal">Business / Deal Opportunity</option>
+								<option value="partnership">Partnership</option>
+								<option value="general">General Inquiry</option>
+							</select>
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+						<div class="form-footer">
+							<p class="form-disclaimer">
+								By submitting this form you agree that Venera Capital may contact you regarding your enquiry. We do not share your information with third parties.
+							</p>
+							<button type="submit" class="btn btn-primary">Send Message</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</Layout>
+
+<style>
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 6rem;
+		align-items: start;
+	}
+
+	.contact-channels {
+		margin-top: 3rem;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.channel h5    { color: var(--text-muted); margin-bottom: 0.35rem; }
+	.channel a     { font-size: 0.95rem; color: var(--text-dark); transition: color var(--transition); }
+	.channel a:hover { color: var(--gold); }
+
+	/* Form */
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
+	}
+
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+	}
+
+	.field label {
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--text-muted);
+	}
+
+	.field input,
+	.field select,
+	.field textarea {
+		font-family: var(--font-sans);
+		font-size: 0.95rem;
+		color: var(--text-dark);
+		background: var(--off-white);
+		border: 1px solid var(--border);
+		padding: 0.85rem 1rem;
+		outline: none;
+		transition: border-color var(--transition);
+		-webkit-appearance: none;
+		border-radius: 0;
+		width: 100%;
+	}
+
+	.field input:focus,
+	.field select:focus,
+	.field textarea:focus {
+		border-color: var(--navy);
+		background: var(--white);
+	}
+
+	.field textarea {
+		resize: vertical;
+		min-height: 140px;
+		line-height: 1.6;
+	}
+
+	.form-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 2rem;
+		padding-top: 0.5rem;
+	}
+
+	.form-disclaimer {
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		line-height: 1.6;
+		margin: 0;
+		max-width: 300px;
+	}
+
+	@media (max-width: 900px) {
+		.contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+	}
+
+	@media (max-width: 600px) {
+		.form-row    { grid-template-columns: 1fr; }
+		.form-footer { flex-direction: column; align-items: flex-start; }
+	}
+</style>
