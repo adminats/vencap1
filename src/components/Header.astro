@@ -13,11 +13,7 @@ const isActive = (href: string) => currentPath.startsWith(href);
 	<div class="header-inner container">
 
 		<a href="/" class="logo" aria-label="Venera Capital — Home">
-			<span class="logo-mark">V</span>
-			<span class="logo-text">
-				<span class="logo-name">VENERA CAPITAL</span>
-				<span class="logo-sub">PRIVATE EQUITY</span>
-			</span>
+			<img src="/favicon.svg" alt="Venera Capital" class="logo-img" />
 		</a>
 
 		<button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,56 +75,19 @@ const isActive = (href: string) => currentPath.startsWith(href);
 	.logo {
 		display: flex;
 		align-items: center;
-		gap: 0.85rem;
 		text-decoration: none;
-		color: var(--white);
 		flex-shrink: 0;
 	}
 
-	.logo-mark {
-		font-family: var(--font-serif);
-		font-size: 1.6rem;
-		font-weight: 300;
-		color: var(--gold);
-		width: 40px;
-		height: 40px;
-		border: 1px solid rgba(201, 168, 76, 0.6);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-shrink: 0;
-		letter-spacing: -0.02em;
-		transition: border-color var(--transition);
+	.logo-img {
+		height: 42px;
+		width: auto;
+		display: block;
+		filter: brightness(0) invert(1);
+		transition: opacity var(--transition);
 	}
 
-	.logo:hover .logo-mark {
-		border-color: var(--gold);
-	}
-
-	.logo-text {
-		display: flex;
-		flex-direction: column;
-		gap: 1px;
-	}
-
-	.logo-name {
-		font-family: var(--font-sans);
-		font-size: 0.85rem;
-		font-weight: 500;
-		letter-spacing: 0.22em;
-		color: var(--white);
-		line-height: 1;
-	}
-
-	.logo-sub {
-		font-family: var(--font-sans);
-		font-size: 0.55rem;
-		font-weight: 400;
-		letter-spacing: 0.22em;
-		color: rgba(255, 255, 255, 0.45);
-		line-height: 1;
-		text-transform: uppercase;
-	}
+	.logo:hover .logo-img { opacity: 0.85; }
 
 	/* Navigation */
 	.main-nav {
@@ -159,9 +118,7 @@ const isActive = (href: string) => currentPath.startsWith(href);
 	}
 
 	.nav-link:hover,
-	.nav-link.active {
-		color: var(--white);
-	}
+	.nav-link.active { color: var(--white); }
 
 	.nav-link.active::after {
 		content: '';
@@ -173,10 +130,7 @@ const isActive = (href: string) => currentPath.startsWith(href);
 		background: var(--gold);
 	}
 
-	.nav-cta {
-		padding: 0.6rem 1.5rem;
-		font-size: 0.68rem;
-	}
+	.nav-cta { padding: 0.6rem 1.5rem; font-size: 0.68rem; }
 
 	/* Hamburger */
 	.nav-toggle {
@@ -221,11 +175,7 @@ const isActive = (href: string) => currentPath.startsWith(href);
 
 		.main-nav.is-open { display: flex; }
 
-		.nav-list {
-			flex-direction: column;
-			gap: 0;
-			width: 100%;
-		}
+		.nav-list { flex-direction: column; gap: 0; width: 100%; }
 
 		.nav-link {
 			padding: 0.85rem 0;
@@ -235,7 +185,6 @@ const isActive = (href: string) => currentPath.startsWith(href);
 		}
 
 		.nav-link.active::after { display: none; }
-
 		.nav-cta { margin-top: 1.5rem; }
 	}
 </style>
